@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('db_14_1.db')
+conn = sqlite3.connect('not_telegram.db')
 cur = conn.cursor()
 
 # Create a database
