@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PL_Module_14.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_1/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_1/module_14_1.py" afterDir="false" />
+    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Фикс">
+      <change afterPath="$PROJECT_DIR$/module_14_2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_2/module_14_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +24,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DRuseus&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DRuseus/PL_Module_14.git&quot;,
+    &quot;accountId&quot;: &quot;61f6ea7f-e0ac-4c72-91de-b0a6a5d098d1&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2oCPZzYWbCYv44CoFNgke65XnGp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -45,10 +51,17 @@
   "keyToString": {
     "Python.data_base.executor": "Run",
     "Python.module_14_1.executor": "Run",
+    "Python.module_14_2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/PyProjects/PL_Module_14"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PyProjects\PL_Module_14" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -65,6 +78,19 @@
       <option name="presentableId" value="Default" />
       <updated>1730370643368</updated>
     </task>
+    <task id="LOCAL-00001" summary="Фикс">
+      <option name="closed" value="true" />
+      <created>1730378905974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730378905974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Фикс" />
+    <option name="LAST_COMMIT_MESSAGE" value="Фикс" />
   </component>
 </project>
