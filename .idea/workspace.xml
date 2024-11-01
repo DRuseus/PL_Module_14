@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Фикс">
-      <change afterPath="$PROJECT_DIR$/module_14_2/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_2/module_14_2.py" afterDir="false" />
+    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;">
+      <change afterPath="$PROJECT_DIR$/module_14_3/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_3/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_3/api_key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_3/module_14_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_3/prod_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_3/prod_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_3/prod_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_3/prod_4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +26,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,19 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.data_base.executor": "Run",
-    "Python.module_14_1.executor": "Run",
-    "Python.module_14_2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/PyProjects/PL_Module_14"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_3.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PyProjects/PL_Module_14/module_14_3&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PyProjects\PL_Module_14\module_14_3" />
       <recent name="D:\PyProjects\PL_Module_14" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyProjects\PL_Module_14\module_14_3" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -86,11 +100,20 @@
       <option name="project" value="LOCAL" />
       <updated>1730378905974</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;">
+      <option name="closed" value="true" />
+      <created>1730471466825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730471466825</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Фикс" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фикс" />
+    <MESSAGE value="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;" />
   </component>
 </project>
