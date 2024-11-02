@@ -105,7 +105,7 @@ async def confirm_buying_product_4(call):
 async def get_buying_list(message):
     logging.info(f'Пользователь {message.from_user.full_name} ввёл {message.text}')
     for prod in prod_list:
-        await message.answer_photo(FSInputFile(prod[-1]), f'Название: {prod[1]} | Описание: {prod[2]} | Цена: {prod[3]}')
+        await message.answer_photo(FSInputFile(f'prod_{prod[0]}.png'), f'Название: {prod[1]} | Описание: {prod[2]} | Цена: {prod[3]}')
     await message.answer('Выберите продукт для покупки:', reply_markup=il_prod_menu)
 
 
@@ -193,10 +193,10 @@ if __name__ == "__main__":
         logging.info(e)
         print(e)
 
-    put_in_db(1, 'Продукт №1', 100, description='Дешман, но норм', img='prod_1.png')
-    put_in_db(2, 'Продукт №2', 200, description='Бестселлер', img='prod_2.png')
-    put_in_db(3, 'Продукт №3', 300, description='Улучшеный состав', img='prod_3.png')
-    put_in_db(4, 'Продукт №4', 400, description='Элитный товар', img='prod_4.png')
+    put_in_db(1, 'Продукт №1', 100, description='Дешман, но норм')
+    put_in_db(2, 'Продукт №2', 200, description='Бестселлер')
+    put_in_db(3, 'Продукт №3', 300, description='Улучшеный состав')
+    put_in_db(4, 'Продукт №4', 400, description='Элитный товар')
 
     prod_list = get_all_products()
 

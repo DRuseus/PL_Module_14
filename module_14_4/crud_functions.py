@@ -21,8 +21,7 @@ def initiate_db(db_name='Products'):
         id INTEGER IF PRIMARY KEY,
         title TEXT IF NOT NULL,
         description TEXT,
-        price INTEGER IF NOT NULL,
-        img TEXT
+        price INTEGER IF NOT NULL
         ) 
     """)
 
@@ -39,8 +38,8 @@ def put_in_db(id_: int, title: str, price: int, description: str = None, img: st
     cur = conn.cursor()
 
     try:
-        cur.execute(f'INSERT INTO Products VALUES(?, ?, ?, ?, ?)',
-                (id_, title, description, price, img))
+        cur.execute(f'INSERT INTO Products VALUES(?, ?, ?, ?)',
+                (id_, title, description, price))
     except:
         print('Уже есть такой товар')
 
