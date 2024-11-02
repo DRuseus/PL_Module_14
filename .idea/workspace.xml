@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;">
-      <change afterPath="$PROJECT_DIR$/module_14_3/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_3/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_3/api_key.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_3/module_14_3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_3/prod_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_3/prod_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_3/prod_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_3/prod_4.png" afterDir="false" />
+    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Выполнено домашнее задание по теме &quot;Доработка бота&quot;">
+      <change afterPath="$PROJECT_DIR$/module_14_4/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/Products.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/crud_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/module_14_4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/prod_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/prod_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/prod_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/prod_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_14_4/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,23 +60,55 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.crud_functions.executor&quot;: &quot;Run&quot;,
     &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
     &quot;Python.module_14_1.executor&quot;: &quot;Run&quot;,
     &quot;Python.module_14_2.executor&quot;: &quot;Run&quot;,
     &quot;Python.module_14_3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PyProjects/PL_Module_14/module_14_3&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/PyProjects/PL_Module_14&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PyProjects\PL_Module_14\module_14_3" />
       <recent name="D:\PyProjects\PL_Module_14" />
+      <recent name="D:\PyProjects\PL_Module_14\module_14_3" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PyProjects\PL_Module_14\module_14_3" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="module_14_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PL_Module_14" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_14_4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_14_4/module_14_4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.module_14_4" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -108,12 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1730471466825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Выполнено домашнее задание по теме &quot;Доработка бота&quot;">
+      <option name="closed" value="true" />
+      <created>1730488956759</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730488956759</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Фикс" />
     <MESSAGE value="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;" />
+    <MESSAGE value="Выполнено домашнее задание по теме &quot;Доработка бота&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Выполнено домашнее задание по теме &quot;Доработка бота&quot;" />
   </component>
 </project>
