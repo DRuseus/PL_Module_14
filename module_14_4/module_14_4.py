@@ -7,7 +7,7 @@ from aiogram.filters.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import ReplyKeyboardMarkup
-from aiogram.utils.keyboard import CallbackData
+from aiogram.utils.keyboard import CallbackData, InlineKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import KeyboardButton
 from aiogram.types.input_file import FSInputFile
@@ -44,15 +44,19 @@ buy_button = KeyboardButton(text='Купить товар')
 il_button_calc = InlineKeyboardButton(text='Начать расчёт', callback_data=MyFilter(action='start').pack())
 il_button_info = InlineKeyboardButton(text='Формула расчёта',
                                       callback_data=MyFilter(action='formula').pack())
-il_but_product_1 = InlineKeyboardButton(text='Продукт №1', callback_data=MyFilter(action='prod_1').pack())
-il_but_product_2 = InlineKeyboardButton(text='Продукт №2', callback_data=MyFilter(action='prod_2').pack())
-il_but_product_3 = InlineKeyboardButton(text='Продукт №3', callback_data=MyFilter(action='prod_3').pack())
-il_but_product_4 = InlineKeyboardButton(text='Продукт №4', callback_data=MyFilter(action='prod_4').pack())
+
+
+
+
+#il_but_product_1 = InlineKeyboardButton(text='Продукт №1', callback_data=MyFilter(action='prod_1').pack())
+#il_but_product_2 = InlineKeyboardButton(text='Продукт №2', callback_data=MyFilter(action='prod_2').pack())
+#il_but_product_3 = InlineKeyboardButton(text='Продукт №3', callback_data=MyFilter(action='prod_3').pack())
+#il_but_product_4 = InlineKeyboardButton(text='Продукт №4', callback_data=MyFilter(action='prod_4').pack())
 # Keyboard
 il_markup_1 = InlineKeyboardMarkup(inline_keyboard=[[il_button_calc, il_button_info]])
 il_markup_2 = InlineKeyboardMarkup(inline_keyboard=[[il_button_calc]])
-il_prod_menu = InlineKeyboardMarkup(inline_keyboard=[[il_but_product_1, il_but_product_2],
-                                                     [il_but_product_3, il_but_product_4]])
+#il_prod_menu = InlineKeyboardMarkup(inline_keyboard=[[il_but_product_1, il_but_product_2],
+#                                                     [il_but_product_3, il_but_product_4]])
 markup_1 = ReplyKeyboardMarkup(keyboard=[[start_button_1, info_button],
                                          [buy_button]], resize_keyboard=True, one_time_keyboard=True)
 
@@ -76,28 +80,15 @@ async def start_calc(call, state: FSMContext):
     await call.answer()
 
 
-@dp.callback_query(MyFilter.filter(F.action == 'prod_1'))
+@dp.callback_query(MyFilter.filter(F.action.contains('prod')))
 async def confirm_buying_product_1(call):
     logging.info(f'Пользователь {call.message.from_user.full_name} ввёл {call.message.text}')
-    await call.message.answer_photo(prod_1_img, 'Вы успешно приобрели продукт №1!')
-    await call.answer()
-
-@dp.callback_query(MyFilter.filter(F.action == 'prod_2'))
-async def confirm_buying_product_2(call):
-    logging.info(f'Пользователь {call.message.from_user.full_name} ввёл {call.message.text}')
-    await call.message.answer_photo(prod_2_img, 'Вы успешно приобрели продукт №2!')
-    await call.answer()
-
-@dp.callback_query(MyFilter.filter(F.action == 'prod_3'))
-async def confirm_buying_product_3(call):
-    logging.info(f'Пользователь {call.message.from_user.full_name} ввёл {call.message.text}')
-    await call.message.answer_photo(prod_3_img, 'Вы успешно приобрели продукт №3!')
-    await call.answer()
-
-@dp.callback_query(MyFilter.filter(F.action == 'prod_4'))
-async def confirm_buying_product_4(call):
-    logging.info(f'Пользователь {call.message.from_user.full_name} ввёл {call.message.text}')
-    await call.message.answer_photo(prod_4_img, 'Вы успешно приобрели продукт №4!')
+    data = call.data[-1]
+    try:
+        await call.message.answer_photo(FSInputFile(f'prod_{data}.png'), f'Вы успешно приобрели продукт №{data}!')
+    except:
+        # Это отлов ошибки отсутствия изображения
+        await call.message.answer_photo(FSInputFile('no_img.jpg'), f'Вы успешно приобрели продукт №{data}!')
     await call.answer()
 
 
@@ -105,8 +96,13 @@ async def confirm_buying_product_4(call):
 async def get_buying_list(message):
     logging.info(f'Пользователь {message.from_user.full_name} ввёл {message.text}')
     for prod in prod_list:
-        await message.answer_photo(FSInputFile(f'prod_{prod[0]}.png'), f'Название: {prod[1]} | Описание: {prod[2]} | Цена: {prod[3]}')
-    await message.answer('Выберите продукт для покупки:', reply_markup=il_prod_menu)
+        try:
+            await message.answer_photo(FSInputFile(f'prod_{prod[0]}.png'), f'Название: {prod[1]} | Описание: {prod[2]} | Цена: {prod[3]}')
+        except:
+            # Это отлов ошибки отсутствия изображения
+            await message.answer_photo(FSInputFile('no_img.jpg'),
+                                       f'Название: {prod[1]} | Описание: {prod[2]} | Цена: {prod[3]}')
+    await message.answer('Выберите продукт для покупки:', reply_markup=builder.as_markup())
 
 
 @dp.message(F.text == 'Информация о боте')
@@ -197,7 +193,16 @@ if __name__ == "__main__":
     put_in_db(2, 'Продукт №2', 200, description='Бестселлер')
     put_in_db(3, 'Продукт №3', 300, description='Улучшеный состав')
     put_in_db(4, 'Продукт №4', 400, description='Элитный товар')
+    put_in_db(5, 'Продукт №5', 500, description='Ещё более элитный товар')
+    put_in_db(6, 'Продукт №6', 600, description='ООООчень Элитный товар')
+    put_in_db(7, 'Продукт №7', 700, description='ВАЩЕПИЗДЕЦЭлитный товар')
+
 
     prod_list = get_all_products()
+
+    builder = InlineKeyboardBuilder()
+    for index in range(1, len(prod_list) + 1):
+        builder.button(text=f"Продукт №{index}", callback_data=MyFilter(action=f"prod_{index}").pack())
+    builder.adjust(2)
 
     asyncio.run(main())

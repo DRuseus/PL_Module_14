@@ -29,7 +29,7 @@ def initiate_db(db_name='Products'):
     conn.close()
 
 
-def put_in_db(id_: int, title: str, price: int, description: str = None, img: str = None, db_name='Products'):
+def put_in_db(id_: int, title: str, price: int, description: str = None, db_name='Products'):
     if not f'{db_name}.db' in os.listdir(os.getcwd()):
         raise InitTableError(f'База данных с именем {db_name} НЕ существует!')
 
@@ -38,8 +38,8 @@ def put_in_db(id_: int, title: str, price: int, description: str = None, img: st
     cur = conn.cursor()
 
     try:
-        cur.execute(f'INSERT INTO Products VALUES(?, ?, ?, ?)',
-                (id_, title, description, price))
+       cur.execute(f'INSERT INTO {db_name} VALUES(?, ?, ?, ?)',
+               (id_, title, description, price))
     except:
         print('Уже есть такой товар')
 

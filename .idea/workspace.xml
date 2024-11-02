@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Выполнено домашнее задание по теме &quot;Доработка бота&quot;">
-      <change afterPath="$PROJECT_DIR$/module_14_4/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/Products.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/crud_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/module_14_4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/prod_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/prod_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/prod_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/prod_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_4/test.py" afterDir="false" />
+    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Удалён лишний элемент из базы данных (параметр товара, отвечающий за название ПНГ картинки, которая ему соответствует). Теперь картинка определяется адишником товара. Так же изменено всё, что с этим связано.">
+      <change afterPath="$PROJECT_DIR$/module_14_4/no_img.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_14_4/Products.db" beforeDir="false" afterPath="$PROJECT_DIR$/module_14_4/Products.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_14_4/crud_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_14_4/crud_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_14_4/module_14_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_14_4/module_14_4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,13 +144,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730488956759</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Выполнено домашнее задание по теме &quot;План написания админ панели&quot;">
+      <option name="closed" value="true" />
+      <created>1730574603120</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730574603120</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Удалён лишний элемент из базы данных (параметр товара, отвечающий за название ПНГ картинки, которая ему соответствует). Теперь картинка определяется адишником товара. Так же изменено всё, что с этим связано.">
+      <option name="closed" value="true" />
+      <created>1730575553270</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730575553270</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Фикс" />
     <MESSAGE value="Выполнено домашнее задание по теме &quot;Выбор элементов и функции в SQL запросах&quot;" />
     <MESSAGE value="Выполнено домашнее задание по теме &quot;Доработка бота&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Выполнено домашнее задание по теме &quot;Доработка бота&quot;" />
+    <MESSAGE value="Выполнено домашнее задание по теме &quot;План написания админ панели&quot;" />
+    <MESSAGE value="Удалён лишний элемент из базы данных (параметр товара, отвечающий за название ПНГ картинки, которая ему соответствует). Теперь картинка определяется адишником товара. Так же изменено всё, что с этим связано." />
+    <option name="LAST_COMMIT_MESSAGE" value="Удалён лишний элемент из базы данных (параметр товара, отвечающий за название ПНГ картинки, которая ему соответствует). Теперь картинка определяется адишником товара. Так же изменено всё, что с этим связано." />
   </component>
 </project>
