@@ -16,7 +16,11 @@ from api_key import API
 from crud_functions import *
 
 
-
+class RegistrationState(StatesGroup):
+    username = State()
+    email = State()
+    age = State()
+    balance = State()
 
 
 class UserState(StatesGroup):
@@ -38,27 +42,20 @@ prod_2_img = FSInputFile('prod_2.png')
 prod_3_img = FSInputFile('prod_3.png')
 prod_4_img = FSInputFile('prod_4.png')
 # Button
-start_button_1 = KeyboardButton(text='Расчёт нормы калорий')
-info_button = KeyboardButton(text='Информация о боте')
-buy_button = KeyboardButton(text='Купить товар')
+#start_button_1 = KeyboardButton(text='Расчёт нормы калорий')
+#info_button = KeyboardButton(text='Информация о боте')
+#buy_button = KeyboardButton(text='Купить товар')
 il_button_calc = InlineKeyboardButton(text='Начать расчёт', callback_data=MyFilter(action='start').pack())
 il_button_info = InlineKeyboardButton(text='Формула расчёта',
                                       callback_data=MyFilter(action='formula').pack())
-
-
-
-
-#il_but_product_1 = InlineKeyboardButton(text='Продукт №1', callback_data=MyFilter(action='prod_1').pack())
-#il_but_product_2 = InlineKeyboardButton(text='Продукт №2', callback_data=MyFilter(action='prod_2').pack())
-#il_but_product_3 = InlineKeyboardButton(text='Продукт №3', callback_data=MyFilter(action='prod_3').pack())
-#il_but_product_4 = InlineKeyboardButton(text='Продукт №4', callback_data=MyFilter(action='prod_4').pack())
 # Keyboard
 il_markup_1 = InlineKeyboardMarkup(inline_keyboard=[[il_button_calc, il_button_info]])
 il_markup_2 = InlineKeyboardMarkup(inline_keyboard=[[il_button_calc]])
-#il_prod_menu = InlineKeyboardMarkup(inline_keyboard=[[il_but_product_1, il_but_product_2],
-#                                                     [il_but_product_3, il_but_product_4]])
-markup_1 = ReplyKeyboardMarkup(keyboard=[[start_button_1, info_button],
-                                         [buy_button]], resize_keyboard=True, one_time_keyboard=True)
+markup_1 = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Расчёт нормы калорий'), KeyboardButton(text='Информация о боте')],
+                                         [KeyboardButton(text='Купить товар')],
+                                         [KeyboardButton(text='Регистрация')]
+                                         ],
+                               resize_keyboard=True, one_time_keyboard=True)
 
 
 # Отвечает на нажатие кнопки в IL-клавиатуре "Формула расчёта"
@@ -92,7 +89,41 @@ async def confirm_buying_product_1(call):
     await call.answer()
 
 
-@dp.message(F.text == 'Купить товар')
+@dp.message(F.text.lower() == 'регистрация')
+async def sign_up(message, state: FSMContext):
+    logging.info(f'Пользователь {message.from_user.full_name} ввёл {message.text}')
+    await state.set_state(RegistrationState.username)
+    await message.answer('Введите имя пользователя (только латинский алфавит):')
+
+
+@dp.message(RegistrationState.username)
+async def set_username(message, state: FSMContext):
+    if check_user(message.text):
+        await state.set_state(RegistrationState.username)
+        await message.answer('Пользователь существует, введите другое имя')
+    else:
+        await state.update_data(username=str(message.text))
+        await state.set_state(RegistrationState.email)
+        await message.answer('Введите свой email:')
+
+
+@dp.message(RegistrationState.email)
+async def set_email(message, state: FSMContext):
+    await state.update_data(email=str(message.text))
+    await state.set_state(RegistrationState.age)
+    await message.answer('Введите свой возраст:')
+
+
+@dp.message(RegistrationState.age)
+async def set_age(message, state: FSMContext):
+    await state.update_data(age=str(message.text))
+    data = await state.get_data()
+    add_user(**data)
+    await message.answer(f'Регистрация прошла успешно')
+    await state.clear()
+
+
+@dp.message(F.text.lower() == 'купить товар')
 async def get_buying_list(message):
     logging.info(f'Пользователь {message.from_user.full_name} ввёл {message.text}')
     for prod in prod_list:
@@ -122,9 +153,8 @@ async def start(message):
 
 
 @dp.message(F.text.contains('нормы калорий'))
-async def set_age(message, state: FSMContext):
+async def set_age(message):
     logging.info(f'Пользователь {message.from_user.full_name} ввёл {message.text}')
-    await state.set_state(UserState.age)
     await message.answer('Выберите опцию:', reply_markup=il_markup_1)
 
 
@@ -173,27 +203,23 @@ async def all_messages(message):
     logging.info(f'Пользователь {message.from_user.full_name} ввёл {message.text}')
     await message.answer('Введите команду /start, чтобы начать общение.')
 
-
-async def main() -> None:
+# Багует и зависает иногда
+"""async def main() -> None:
     logging.basicConfig(filename='t_bot.log', filemode='w', level=logging.INFO, encoding='utf-8',
                         format='%(asctime)s, %(levelname)s, %(message)s')
-    await dp.start_polling(bot)
+    await dp.start_polling(bot)"""
 
 
 if __name__ == "__main__":
     logging.basicConfig(filename='t_bot.log', filemode='w', level=logging.INFO, encoding='utf-8',
                         format='%(asctime)s, %(levelname)s, %(message)s')
-    try:
-        initiate_db()
-    except InitTableError as e:
-        logging.info(e)
-        print(e)
 
-    put_in_db(1, 'Продукт №1', 100, description='Дешман, но норм')
-    put_in_db(2, 'Продукт №2', 200, description='Бестселлер')
-    put_in_db(3, 'Продукт №3', 300, description='Улучшеный состав')
-    put_in_db(4, 'Продукт №4', 400, description='Элитный товар')
+    initiate_db()
 
+    put_in_prod(1, 'Продукт №1', 100, description='Дешман, но норм')
+    put_in_prod(2, 'Продукт №2', 200, description='Бестселлер')
+    put_in_prod(3, 'Продукт №3', 300, description='Улучшеный состав')
+    put_in_prod(4, 'Продукт №4', 400, description='Элитный товар')
 
     prod_list = get_all_products()
 
@@ -202,4 +228,8 @@ if __name__ == "__main__":
         builder.button(text=f"Продукт №{index}", callback_data=MyFilter(action=f"prod_{index}").pack())
     builder.adjust(2)
 
-    asyncio.run(main())
+    # Работает надёжнее функции ниже
+    dp.run_polling(bot)
+
+    # Багует и Зависает иногда
+    #asyncio.run(main())
