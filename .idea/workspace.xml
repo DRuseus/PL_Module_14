@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Добавил билдер инлайн_клавиатуры, для тех случаев, если кол-во товара будет меняться и подвязал всё под хэндлеры. Так же в хэндлерах отловил ошибки, если нет фотки для товара.">
-      <change afterPath="$PROJECT_DIR$/module_14_5/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/crud_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/module_14_5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/no_img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/prod_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/prod_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/prod_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_14_5/prod_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_14_4/Products.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_14_4/module_14_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_14_4/module_14_4.py" afterDir="false" />
-    </list>
+    <list default="true" id="8ae5e553-3e22-45c2-b431-141c5f0fc1dd" name="Changes" comment="Выполнено задание по теме &quot;Написание примитивной ORM&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,21 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.crud_functions.executor": "Run",
-    "Python.data_base.executor": "Run",
-    "Python.module_14_1.executor": "Run",
-    "Python.module_14_2.executor": "Run",
-    "Python.module_14_3.executor": "Run",
-    "Python.module_14_4.executor": "Run",
-    "Python.module_14_5.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/PyProjects/PL_Module_14"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.crud_functions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.module_14_5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PyProjects/PL_Module_14&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyProjects\PL_Module_14" />
@@ -176,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730581284082</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Выполнено задание по теме &quot;Написание примитивной ORM&quot;">
+      <option name="closed" value="true" />
+      <created>1730657123055</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730657123055</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Выполнено задание по теме &quot;Написание примитивной ORM&quot;">
+      <option name="closed" value="true" />
+      <created>1730657297801</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730657297801</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,6 +189,7 @@
     <MESSAGE value="Выполнено домашнее задание по теме &quot;План написания админ панели&quot;" />
     <MESSAGE value="Удалён лишний элемент из базы данных (параметр товара, отвечающий за название ПНГ картинки, которая ему соответствует). Теперь картинка определяется адишником товара. Так же изменено всё, что с этим связано." />
     <MESSAGE value="Добавил билдер инлайн_клавиатуры, для тех случаев, если кол-во товара будет меняться и подвязал всё под хэндлеры. Так же в хэндлерах отловил ошибки, если нет фотки для товара." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил билдер инлайн_клавиатуры, для тех случаев, если кол-во товара будет меняться и подвязал всё под хэндлеры. Так же в хэндлерах отловил ошибки, если нет фотки для товара." />
+    <MESSAGE value="Выполнено задание по теме &quot;Написание примитивной ORM&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Выполнено задание по теме &quot;Написание примитивной ORM&quot;" />
   </component>
 </project>

@@ -24,7 +24,7 @@ def initiate_db(db_name='telegram_database'):
 
     cur.execute(f"""
         CREATE TABLE IF NOT EXISTS Users(
-        id INTEGER IF PRIMARY KEY,
+        id INTEGER PRIMARY KEY,
         username TEXT IF NOT NULL,
         email TEXT IF NOT NULL,
         age INTEGER IF NOT NULL,
@@ -47,8 +47,8 @@ def add_user(username, email, age, db_name='telegram_database'):
     # Это нужно для определения присваиваемого индекса
     users_count = cur.execute('SELECT MAX(id) FROM Users').fetchone()
 
-    cur.execute(f'INSERT INTO Users VALUES(?, ?, ?, ?, ?)',
-                    (users_count[0] + 1, username, email, age, 1000))
+    cur.execute(f'INSERT INTO Users(username, email, age, balance) VALUES(?, ?, ?, ?)',
+                    (username, email, age, 1000))
     # Close
     conn.commit()
     conn.close()
